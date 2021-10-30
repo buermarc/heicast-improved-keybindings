@@ -9,26 +9,30 @@ function loadPlayer() {
 }
 
 document.addEventListener('keydown', async (e) => {
-    console.log(document.querySelector("window"))
 
     if (vid == null || vid == undefined) {
         vid = document.querySelector("video")
     }
-    switch(e.code) {
-        case "ArrowRight":
-            vid.fastSeek(vid.currentTime + 15);
-            break
-        case "ArrowLeft":
-            vid.fastSeek(vid.currentTime - 15);
-            break
-        case "Space":
-        case "Enter":
-            loadPlayer();
-            break;
-        case "NumpadEnter":
-            loadPlayer();
-            // 'Click' the pause button
-            document.querySelector("div#buttonPlugin1").click();
-            break;
+    if (/Digit[0-9]/.exec(e.code) != null) {
+        let number = Number(e.code.substring("Digit".length));
+        vid.fastSeek(number * (vid.duration/10));
+    } else {
+        switch(e.code) {
+            case "ArrowRight":
+                vid.fastSeek(vid.currentTime + 15);
+                break
+            case "ArrowLeft":
+                vid.fastSeek(vid.currentTime - 15);
+                break
+            case "Space":
+            case "Enter":
+                loadPlayer();
+                break;
+            case "NumpadEnter":
+                loadPlayer();
+                // 'Click' the pause button
+                document.querySelector("div#buttonPlugin1").click();
+                break;
+        }
     }
 });
