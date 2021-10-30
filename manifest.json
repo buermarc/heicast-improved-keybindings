@@ -1,8 +1,8 @@
 {
 
   "manifest_version": 2,
-  "name": "better-web-player",
-  "version": "0.0.2",
+  "name": "heicast_improved_keybindings",
+  "version": "0.0.3",
 
   "description": "Add custom keybindings",
 
@@ -14,7 +14,7 @@
   ],
   "browser_specific_settings": {
       "gecko": {
-          "id": "buermarc@googlemail.com"
+          "id": "heicast_improved_keybindings@googlemail.com"
       }
   }
 }
