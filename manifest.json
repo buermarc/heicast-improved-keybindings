@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "better-web-player",
+  "version": "0.0.2",
+
+  "description": "Add custom keybindings",
+
+  "content_scripts": [
+    {
+      "matches": ["*://heicast.uni-heidelberg.de/*"],
+      "js": ["custom_bindings.js"]
+    }
+  ],
+  "browser_specific_settings": {
+      "gecko": {
+          "id": "buermarc@googlemail.com"
+      }
+  }
+}
