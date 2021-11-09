@@ -17,7 +17,14 @@ document.addEventListener('keydown', async (e) => {
         let number = Number(e.code.substring("Digit".length));
         vid.fastSeek(number * (vid.duration/10));
     } else {
+        console.log(e.code)
         switch(e.code) {
+            case "Equal":
+                vid.playbackRate = vid.playbackRate + 0.15
+                break
+            case "Minus":
+                vid.playbackRate = vid.playbackRate - 0.15
+                break
             case "ArrowRight":
                 vid.fastSeek(vid.currentTime + 15);
                 break
